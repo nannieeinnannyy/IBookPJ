@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255,255,255,0.2)',
         marginBottom: 20,
         paddingHorizontal: 20,
-        borderColor: "#30336b",
+        borderColor: "#191927",
         borderWidth: 1,
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
         color:"black"
     },
     buttonContainer:{
-        backgroundColor: "#30336b",
+        backgroundColor: "#191927",
         paddingVertical: 15,
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
