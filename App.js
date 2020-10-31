@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet} from 'react-native'
-import Login from './screens/Login'
+import PagesNavigator from './navigation/PagesNavigator'
 export default class App extends Component {
   render() {
     return (
-      <Login/>
-      // <View style={styles.container}>
-      //   <Text>Test.exe</Text>
-      // </View>
+      <PagesNavigator/>
     )
   }
 }
