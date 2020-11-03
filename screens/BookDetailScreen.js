@@ -7,24 +7,21 @@ import {
   TouchableOpacity,
   StatusBar,
   Image,
-  KeyboardAvoidingView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 const SignInScreen = (props) => {
   return (
-    <View
-      style={styles.container}
-    >
+    <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../images/iBook.png")} />
+        <Image style={styles.logo} source={require("../images/Profile.jpg")} />
       </View>
       <View
         style={{
-          paddingVertical: 30,
           borderTopLeftRadius: 30,
           borderTopRightRadius: 30,
           backgroundColor: "white",
+          marginTop: -100,
           alignItems: "center",
           flexGrow: 1,
           justifyContent: "center",
@@ -33,31 +30,18 @@ const SignInScreen = (props) => {
        <Ionicons name="ios-arrow-back" size={40} color="black" style={styles.iconBack}
        onPress={() => {props.navigation.popToTop()}}
        />
-        <Text style={styles.welcome}>Welcome</Text>
-        <TextInput
-          placeholder="Username"
-          placeholderTextColor="rgba(19, 15, 64,0.5)"
-          returnKeyType="next"
-          autoCapitalize="none"
-          // onSubmitEditing={() => this.passwordInput.focus()}
-          autoCorrect={false}
-          style={styles.input}
-        />
-        <TextInput
-          placeholder="Password"
-          placeholderTextColor="rgba(19, 15, 64,0.5)"
-          returnKeyType="go"
-          secureTextEntry
-          style={styles.input}
-          // ref={(input) => this.passwordInput = input}
-        />
+       <Image style={styles.book} source={require("../images/book.jpg")} />
+        <Text style={styles.welcome}>Turning Point</Text>
+        <Text style={styles.direct}> By STEEL,DANIELLE</Text>
+        <Text style={styles.details}>The inspiring sequel to Wings of Fire. Over 3 lakh copies sold. 'It was like any other day on the Anna University campus in Chennai. </Text>
+        
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() => {
-            props.navigation.navigate("Index");
+            props.navigation.navigate("Login");
           }}
         >
-          <Text style={styles.buttonText}>Sign In</Text>
+          <Text style={styles.buttonText}>Select</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -74,14 +58,38 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   logo: {
-    width: 250,
-    height: 250,
+    width: 70,
+    height: 70,
+    borderTopLeftRadius: 160,
+    borderTopRightRadius: 160,
+    borderBottomLeftRadius: 160,
+    borderBottomRightRadius: 160,
+    marginBottom: 50,
+    left:150,
+  },
+  details: {
+    marginTop:20,
+    marginBottom:20,
+    marginLeft:40,
+    marginRight:40,
+
+  },
+  direct: {
+    fontWeight: "bold",
+  },
+  book: {
+    width: 300,
+    height: 350,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
   },
   input: {
     height: 50,
     fontWeight: "bold",
     backgroundColor: "rgba(255,255,255,0.2)",
-    marginBottom: 30,
+    marginBottom: 15,
     paddingHorizontal: 20,
     borderColor: "#191927",
     borderWidth: 1,
@@ -94,10 +102,12 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 40,
+    textAlign: "center",
     fontWeight: "bold",
-    marginBottom: 30,
+    marginTop: 15,
+    marginBottom: 10,
     color: "black",
-    marginRight: '30%',
+    
   },
   buttonContainer: {
     backgroundColor: "black",
@@ -115,8 +125,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   iconBack: {
-    marginRight: '70%',
-    marginBottom: 5,
+    paddingRight: 275,
+    marginBottom: 30,
   },
 });
 export default SignInScreen;
