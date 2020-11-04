@@ -7,59 +7,67 @@ import {
   TouchableOpacity,
   StatusBar,
   Image,
+  ScrollView,
   KeyboardAvoidingView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+
 const SignInScreen = (props) => {
   return (
-    <View
-      style={styles.container}
-    >
+    <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require("../images/iBook.png")} />
       </View>
-      <View
-        style={{
-          paddingVertical: 30,
-          borderTopLeftRadius: 30,
-          borderTopRightRadius: 30,
-          backgroundColor: "white",
-          alignItems: "center",
-          flexGrow: 1,
-          justifyContent: "center",
-        }}
-      >
-       <Ionicons name="ios-arrow-back" size={40} color="black" style={styles.iconBack}
-       onPress={() => {props.navigation.popToTop()}}
-       />
-        <Text style={styles.welcome}>Welcome</Text>
-        <TextInput
-          placeholder="Username"
-          placeholderTextColor="rgba(19, 15, 64,0.5)"
-          returnKeyType="next"
-          autoCapitalize="none"
-          // onSubmitEditing={() => this.passwordInput.focus()}
-          autoCorrect={false}
-          style={styles.input}
-        />
-        <TextInput
-          placeholder="Password"
-          placeholderTextColor="rgba(19, 15, 64,0.5)"
-          returnKeyType="go"
-          secureTextEntry
-          style={styles.input}
-          // ref={(input) => this.passwordInput = input}
-        />
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => {
-            props.navigation.navigate("Index");
+      <ScrollView>
+        <View
+          style={{
+            paddingVertical: 30,
+            borderTopLeftRadius: 30,
+            borderTopRightRadius: 30,
+            backgroundColor: "white",
+            alignItems: "center",
+            flexGrow: 1,
+            justifyContent: "center",
           }}
         >
-          <Text style={styles.buttonText}>Sign In</Text>
-        </TouchableOpacity>
-      </View>
+          <Ionicons
+            name="ios-arrow-back"
+            size={40}
+            color="black"
+            style={styles.iconBack}
+            onPress={() => {
+              props.navigation.popToTop();
+            }}
+          />
+          <Text style={styles.welcome}>Welcome</Text>
+          <TextInput
+            placeholder="Username"
+            placeholderTextColor="rgba(19, 15, 64,0.5)"
+            returnKeyType="next"
+            autoCapitalize="none"
+            // onSubmitEditing={() => this.passwordInput.focus()}
+            autoCorrect={false}
+            style={styles.input}
+          />
+          <TextInput
+            placeholder="Password"
+            placeholderTextColor="rgba(19, 15, 64,0.5)"
+            returnKeyType="go"
+            secureTextEntry
+            style={styles.input}
+            // ref={(input) => this.passwordInput = input}
+          />
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => {
+              props.navigation.navigate("Home");
+            }}
+          >
+            <Text style={styles.buttonText}>Sign In</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -97,7 +105,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 30,
     color: "black",
-    marginRight: '30%',
+    marginRight: "30%",
   },
   buttonContainer: {
     backgroundColor: "black",
@@ -115,7 +123,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   iconBack: {
-    marginRight: '70%',
+    marginRight: "70%",
     marginBottom: 5,
   },
 });

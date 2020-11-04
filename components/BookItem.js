@@ -8,7 +8,9 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-const BookItem = () => {
+
+const BookItem = (props) => {
+  console.log("props", props);
   return (
     <View style={styles.bodyContainer}>
       <Text style={styles.categoryHeader}>Philosopy</Text>
@@ -20,13 +22,18 @@ const BookItem = () => {
           decelerationRate="fast"
           pagingEnabled
         >
-          <View style={styles.itemContainer}>
-            <Image
-              style={styles.frontBook}
-              source={require("../images/book.jpg")}
-            />
-            <Text style={styles.Title}>Turning Point</Text>
-          </View>
+          <TouchableOpacity 
+            onPress={() => {props.navigation.navigate("Login"); }} 
+          >
+            <View style={styles.itemContainer}>
+              <Image
+                style={styles.frontBook}
+                source={require("../images/book.jpg")}
+              />
+              <Text style={styles.Title}>Turning Point</Text>
+            </View>
+          </TouchableOpacity>
+
           <View style={styles.itemContainer}>
             <Image
               style={styles.frontBook}
@@ -95,24 +102,23 @@ const styles = StyleSheet.create({
     alignItems: "baseline",
   },
   itemContainer: {
-    paddingVertical: 30,
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
+    width: 200,
+    paddingVertical: 20,
+    borderRadius: 20,
     backgroundColor: "black",
     marginLeft: 15,
     marginBottom: 15,
   },
   frontBook: {
     flex: 1,
-    width: 200,
+    width: '100%',
     height: 250,
     resizeMode: "contain",
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
+    // borderTopLeftRadius: 30,
+    // borderTopRightRadius: 30,
+    // borderBottomLeftRadius: 30,
+    // borderBottomRightRadius: 30,
+    borderRadius: 30,
     marginBottom: 15,
   },
   Title: {

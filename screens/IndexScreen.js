@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import BookItem from "../components/BookItem";
-const IndexScreen = () => {
+const IndexScreen = (props) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
@@ -17,7 +17,9 @@ const IndexScreen = () => {
         <Text style={styles.Header}>Select your books</Text>
         <Image style={styles.logo} source={require("../images/Profile.jpg")} />
       </View>
-        <BookItem/>
+      <ScrollView>
+        <BookItem navigation={props.navigation}/>
+      </ScrollView>
     </View>
   );
 };
