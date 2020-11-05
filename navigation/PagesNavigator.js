@@ -89,6 +89,12 @@ const CombineNavigator = createStackNavigator(
         headerShown: false,
       }
     },
+    Rent:{
+      screen:RentScreen,
+      navigationOptions:{
+        headerShown: false,
+      }
+    },
     Tabs: {
       screen:BookTabNavigator,
       navigationOptions: {
