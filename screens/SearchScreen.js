@@ -6,6 +6,7 @@ import {
   StatusBar,
   Image,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import SearchBookItem from "../components/SearchBookItem";
 const SearchScreen = (props) => {
@@ -14,10 +15,19 @@ const SearchScreen = (props) => {
       <StatusBar barStyle="light-content" />
       <View style={styles.headerContainer}>
         <Text style={styles.Header}>Search</Text>
-        <Image style={styles.logo} source={require("../images/Profile.jpg")} />
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate("Profile");
+          }}
+        >
+          <Image
+            style={styles.logo}
+            source={require("../images/Profile.jpg")}
+          />
+        </TouchableOpacity>
       </View>
       <ScrollView>
-        <SearchBookItem navigation={props.navigation}/>
+        <SearchBookItem navigation={props.navigation} />
       </ScrollView>
     </View>
   );
@@ -51,4 +61,3 @@ const styles = StyleSheet.create({
   },
 });
 export default SearchScreen;
-

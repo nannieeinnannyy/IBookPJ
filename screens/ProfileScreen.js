@@ -6,29 +6,16 @@ import {
   StatusBar,
   Image,
   ScrollView,
-  TouchableOpacity,
 } from "react-native";
-import MyBookItem from "../components/MyBookItem";
-const MyBookScreen = (props) => {
+import ProfileUser from "../components/ProfileUser"
+const ProfileScreen = (props) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <View style={styles.headerContainer}>
-        <Text style={styles.Header}>My books</Text>
-        <TouchableOpacity
-          onPress={() => {
-            props.navigation.navigate("Profile");
-          }}
-        >
-          <Image
-            style={styles.logo}
-            source={require("../images/Profile.jpg")}
-          />
-        </TouchableOpacity>
+        <Text style={styles.Header}>My profile</Text>
       </View>
-      <ScrollView>
-        <MyBookItem navigation={props.navigation} />
-      </ScrollView>
+      <ProfileUser navigation={props.navigation}/>
     </View>
   );
 };
@@ -60,4 +47,4 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
 });
-export default MyBookScreen;
+export default ProfileScreen;

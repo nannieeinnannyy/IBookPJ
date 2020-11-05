@@ -23,7 +23,7 @@ const BookItem = (props) => {
           pagingEnabled
         >
           <TouchableOpacity 
-            onPress={() => {props.navigation.navigate("Login"); }} 
+            onPress={() => {props.navigation.navigate("BookDetail"); }} 
           >
             <View style={styles.itemContainer}>
               <Image

@@ -15,10 +15,19 @@ const IndexScreen = (props) => {
       <StatusBar barStyle="light-content" />
       <View style={styles.headerContainer}>
         <Text style={styles.Header}>Select your books</Text>
-        <Image style={styles.logo} source={require("../images/Profile.jpg")} />
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate("Profile");
+          }}
+        >
+          <Image
+            style={styles.logo}
+            source={require("../images/Profile.jpg")}
+          />
+        </TouchableOpacity>
       </View>
       <ScrollView>
-        <BookItem navigation={props.navigation}/>
+        <BookItem navigation={props.navigation} />
       </ScrollView>
     </View>
   );

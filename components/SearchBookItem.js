@@ -21,7 +21,7 @@ const SearchBookItem = (props) => {
         }}
       />
       <View style={{ alignItems: "center" }}>
-        <View style={{ flex:1, flexDirection: 'row', alignItems:'baseline'}}>
+        <View style={{ flex: 1, flexDirection: "row", alignItems: "baseline" }}>
           <TextInput
             placeholder="Search..."
             placeholderTextColor="rgba(19, 15, 64,0.5)"
@@ -30,7 +30,12 @@ const SearchBookItem = (props) => {
             autoCorrect={false}
             style={styles.input}
           />
-          <FontAwesome name="search" size={30} color="gray" style={{flex:0.1}}/>
+          <FontAwesome
+            name="search"
+            size={30}
+            color="gray"
+            style={{ flex: 0.1 }}
+          />
         </View>
         <View style={styles.itemContainer}>
           <Image
@@ -40,7 +45,11 @@ const SearchBookItem = (props) => {
           <View style={styles.detail}>
             <Text style={styles.Title}>Turning Point</Text>
             <Text style={styles.Available}>Available: 9 day left</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("BookDetail");
+              }}
+            >
               <View style={styles.SelectContainer}>
                 <Text style={styles.Select}>Select</Text>
                 <Ionicons
@@ -61,7 +70,11 @@ const SearchBookItem = (props) => {
           <View style={styles.detail}>
             <Text style={styles.Title}>Turning Point</Text>
             <Text style={styles.Available}>Available: 9 day left</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("BookDetail");
+              }}
+            >
               <View style={styles.SelectContainer}>
                 <Text style={styles.Select}>Select</Text>
                 <Ionicons

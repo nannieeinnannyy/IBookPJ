@@ -2,43 +2,61 @@ import React, { Component } from "react";
 import {
   Text,
   View,
-  TextInput,
   StyleSheet,
   TouchableOpacity,
   StatusBar,
   Image,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-const SignInScreen = (props) => {
+const BookDetailScreen = (props) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../images/Profile.jpg")} />
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.navigate("Profile");
+          }}
+        >
+          <Image
+            style={styles.logo}
+            source={require("../images/Profile.jpg")}
+          />
+        </TouchableOpacity>
       </View>
       <View
         style={{
+          paddingVertical: 20,
           borderTopLeftRadius: 30,
           borderTopRightRadius: 30,
           backgroundColor: "white",
-          marginTop: -100,
           alignItems: "center",
           flexGrow: 1,
           justifyContent: "center",
+          flex: 0.8,
         }}
       >
-       <Ionicons name="ios-arrow-back" size={40} color="black" style={styles.iconBack}
-       onPress={() => {props.navigation.popToTop()}}
-       />
-       <Image style={styles.book} source={require("../images/book.jpg")} />
+        <Ionicons
+          name="ios-arrow-back"
+          size={40}
+          color="black"
+          style={styles.iconBack}
+          onPress={() => {
+            props.navigation.popToTop();
+          }}
+        />
+        <Image style={styles.book} source={require("../images/book.jpg")} />
         <Text style={styles.welcome}>Turning Point</Text>
         <Text style={styles.direct}> By STEEL,DANIELLE</Text>
-        <Text style={styles.details}>The inspiring sequel to Wings of Fire. Over 3 lakh copies sold. 'It was like any other day on the Anna University campus in Chennai. </Text>
-        
+        <Text style={styles.details}>
+          The inspiring sequel to Wings of Fire. Over 3 lakh copies sold. 'It
+          was like any other day on the Anna University campus in Chennai.{" "}
+        </Text>
+
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() => {
-            props.navigation.navigate("Login");
+            props.navigation.navigate("Payment");
           }}
         >
           <Text style={styles.buttonText}>Select</Text>
@@ -65,14 +83,13 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 160,
     borderBottomRightRadius: 160,
     marginBottom: 50,
-    left:150,
+    left: 150,
   },
   details: {
-    marginTop:20,
-    marginBottom:20,
-    marginLeft:40,
-    marginRight:40,
-
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 40,
+    marginRight: 40,
   },
   direct: {
     fontWeight: "bold",
@@ -107,7 +124,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 10,
     color: "black",
-    
   },
   buttonContainer: {
     backgroundColor: "black",
@@ -129,4 +145,4 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
 });
-export default SignInScreen;
+export default BookDetailScreen;

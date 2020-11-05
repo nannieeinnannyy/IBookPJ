@@ -11,6 +11,7 @@ import SearchScreen from '../screens/SearchScreen';
 import { Ionicons, AntDesign, MaterialCommunityIcons} from "@expo/vector-icons";
 import BookDetailScreen from "../screens/BookDetailScreen";
 import PaymentScreen from "../screens/PaymentScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 const BookTabNavigator = createBottomTabNavigator(
   {
       Home:{
@@ -81,6 +82,12 @@ const CombineNavigator = createStackNavigator(
       navigationOptions: {
         headerShown: false,
       },
+    },
+    Profile:{
+      screen:ProfileScreen,
+      navigationOptions:{
+        headerShown: false,
+      }
     },
     Tabs: {
       screen:BookTabNavigator,

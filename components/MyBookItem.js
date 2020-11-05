@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 const MyBookItem = (props) => {
   console.log("props", props);
@@ -29,7 +23,11 @@ const MyBookItem = (props) => {
           <View style={styles.detail}>
             <Text style={styles.Title}>Turning Point</Text>
             <Text style={styles.Available}>Available: 9 day left</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("BookDetail");
+              }}
+            >
               <View style={styles.SelectContainer}>
                 <Text style={styles.Select}>Select</Text>
                 <Ionicons
@@ -50,7 +48,11 @@ const MyBookItem = (props) => {
           <View style={styles.detail}>
             <Text style={styles.Title}>Turning Point</Text>
             <Text style={styles.Available}>Available: 9 day left</Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate("BookDetail");
+              }}
+            >
               <View style={styles.SelectContainer}>
                 <Text style={styles.Select}>Select</Text>
                 <Ionicons
